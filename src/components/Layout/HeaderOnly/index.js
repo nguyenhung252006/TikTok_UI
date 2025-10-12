@@ -1,12 +1,10 @@
 import Header from "~/components/Layout/components/Header";
-import Sidebar from "./Sidebar";
 
-function DefaultLayout({ children }) {
+function DefaltLayout({ children }) {
     return ( 
         <div>
             <Header/>
             <div className="container">
-                <Sidebar/>
                 <div className="content">
                     {children}
                 </div>
@@ -15,4 +13,4 @@ function DefaultLayout({ children }) {
      );
 }
 
-export default DefaultLayout;
+export default DefaltLayout;
