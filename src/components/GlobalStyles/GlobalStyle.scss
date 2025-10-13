@@ -9,7 +9,8 @@
     //default Layout
     --default-layout-header-height: 60px;
     --default-layout-width-content: 1150px;
-
+    --black: #000;
+    --text-color: #333;
 
 }
 
@@ -29,4 +30,14 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeLegibility;
+}
+
+button, input, [tabindex]  {
+    border: none;
+    outline: none;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
 }
