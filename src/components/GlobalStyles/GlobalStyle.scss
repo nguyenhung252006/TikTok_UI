@@ -3,7 +3,13 @@
 
 
 :root {
-    --primary: #fe2cc55
+    --primary: #fe2cc55;
+    
+
+    //default Layout
+    --default-layout-header-height: 60px;
+    --default-layout-width-content: 1150px;
+
 
 }
 
@@ -11,6 +17,8 @@ html {
 font-size: 62.5%;
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
