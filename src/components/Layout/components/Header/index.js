@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItems from '~/components/AccountItems';
+import Button from '~/components/Button';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -55,7 +56,8 @@ function Header() {
           </div>
         </Tippy>
         <div className={cx('action')}>
-
+          <Button text >Upload</Button>
+          <Button primary>Log in</Button>
         </div>
       </div>
     </header>
