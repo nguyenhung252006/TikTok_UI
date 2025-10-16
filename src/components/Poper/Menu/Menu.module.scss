@@ -1,3 +1,23 @@
-.content {
+.wrapper {
+    width: 100%;
+}
+
+.menu-list {
     max-width: 240px;
+
+    .menu-item {
+        margin-left: 0;
+        background-color: white;
+    }
+}
+
+.menu-poper {
+    padding-bottom: 8px;
+}
+
+.menu-item {
+    padding: auto;
+    &:hover {
+        background-color: rgba(22,24,35,0.03);
+    }
 }

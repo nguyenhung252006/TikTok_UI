@@ -33,7 +33,7 @@ function Header() {
     },
     {
       icon: <FontAwesomeIcon icon={faCircleQuestion}/>,
-      title: 'FeedBack and Help',
+      title: 'Feedback and Help',
       to : '/Feedback',
     },{
       icon: <FontAwesomeIcon icon={faKeyboard}/>,
