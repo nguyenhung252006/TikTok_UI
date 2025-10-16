@@ -3,6 +3,7 @@ import { Wrapper as PoperWrapper } from '~/components/Poper';
 import classNames from 'classnames/bind';
 import MenuItem from './MenuItem';
 import styles from './Menu.module.scss';
+import Header from './Header';
 
 
 const cx = classNames.bind(styles);
@@ -21,6 +22,7 @@ function Menu({ children, items = [] }) {
             render={attrs => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PoperWrapper className={cx('menu-poper')}>
+                        <Header title="Language"/>
                         {renderItems()}
                     </PoperWrapper>
                 </div>
