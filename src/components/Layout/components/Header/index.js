@@ -3,12 +3,18 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItems from '~/components/AccountItems';
 import Button from '~/components/Button';
+import Menu from '~/components/Poper/Menu';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEarthAsia } from '@fortawesome/free-solid-svg-icons';
+import { faKeyboard } from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import { useState } from 'react';
 import { Wrapper as PoperWrapper } from '~/components/Poper';
+
 
 
 
@@ -17,7 +23,23 @@ const cx = classNames.bind(styles);
 console.log(images.logo)
 console.log('faCircleXmark:', faCircleXmark.iconName);
 function Header() {
-  const [SearchResult, setSearchResult] = useState([1, 2, 3]);
+  const [SearchResult, setSearchResult] = useState([]);
+  const MENU_ITEMS =[
+    {
+      icon: <FontAwesomeIcon icon={faEarthAsia}/>,
+      title: 'English',
+      
+
+    },
+    {
+      icon: <FontAwesomeIcon icon={faCircleQuestion}/>,
+      title: 'FeedBack and Help',
+      to : '/Feedback',
+    },{
+      icon: <FontAwesomeIcon icon={faKeyboard}/>,
+      title: 'Keyboard Shortcuts',
+    }
+  ];
 
   return (
     <header className={cx('wrapper')}>
@@ -58,6 +80,14 @@ function Header() {
         <div className={cx('action')}>
           <Button text >Upload</Button>
           <Button primary>Log in</Button>
+
+          <Menu
+            items = {MENU_ITEMS}
+          >
+            <button className={cx('more-btn')}>
+              <FontAwesomeIcon icon={faEllipsisVertical} />
+            </button>
+          </Menu>
         </div>
       </div>
     </header>
