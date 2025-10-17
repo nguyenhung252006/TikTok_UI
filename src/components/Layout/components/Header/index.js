@@ -12,7 +12,7 @@ import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
-import { useState } from 'react';
+import { Children, useState } from 'react';
 import { Wrapper as PoperWrapper } from '~/components/Poper';
 
 
@@ -24,19 +24,39 @@ console.log(images.logo)
 console.log('faCircleXmark:', faCircleXmark.iconName);
 function Header() {
   const [SearchResult, setSearchResult] = useState([]);
-  const MENU_ITEMS =[
+
+  //handle logic
+  const handleMenuChange = (menuItem) => {
+    console.log(menuItem)
+  }
+
+  const MENU_ITEMS = [
     {
-      icon: <FontAwesomeIcon icon={faEarthAsia}/>,
+      icon: <FontAwesomeIcon icon={faEarthAsia} />,
       title: 'English',
-      
+      children: {
+        title: "Language",
+        data: [
+          {
+            type: "language",
+            code: "en",
+            title: "English",
+          },
+          {
+            type: "language",
+            code: "vi",
+            title: "Tiếng Việt",
+          }
+        ]
+      }
 
     },
     {
-      icon: <FontAwesomeIcon icon={faCircleQuestion}/>,
+      icon: <FontAwesomeIcon icon={faCircleQuestion} />,
       title: 'Feedback and Help',
-      to : '/Feedback',
-    },{
-      icon: <FontAwesomeIcon icon={faKeyboard}/>,
+      to: '/Feedback',
+    }, {
+      icon: <FontAwesomeIcon icon={faKeyboard} />,
       title: 'Keyboard Shortcuts',
     }
   ];
@@ -82,7 +102,7 @@ function Header() {
           <Button primary>Log in</Button>
 
           <Menu
-            items = {MENU_ITEMS}
+            items={MENU_ITEMS} onChange= {handleMenuChange}
           >
             <button className={cx('more-btn')}>
               <FontAwesomeIcon icon={faEllipsisVertical} />

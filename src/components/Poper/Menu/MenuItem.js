@@ -5,10 +5,12 @@ import styles from './Menu.module.scss';
 
 
 const cx = classNames.bind(styles);
-function MenuItem({ data }) {
+function MenuItem({ data, onClick, onBack}) {
     return (
         <div className={cx('wrapper')}>
-            <Button className={cx("menu-item")} leftIcon={data.icon} to={data.to}>{data.title}</Button>
+            <Button className={cx("menu-item")} leftIcon={data.icon} to={data.to}
+                onClick={onClick} onBack={onBack}
+            >{data.title}</Button>
         </div>
     );
 }

@@ -15,7 +15,7 @@ function Button({ to,
     children,
     className,
     onClick,
-    ...passProps }
+    ...passProps },
 ) {
     let Comp = 'button';
     const props = {
