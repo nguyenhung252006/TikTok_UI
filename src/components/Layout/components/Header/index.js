@@ -4,6 +4,7 @@ import images from '~/assets/images';
 import AccountItems from '~/components/AccountItems';
 import Button from '~/components/Button';
 import Menu from '~/components/Poper/Menu';
+import Image from '~/components/Image';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoins, faEarthAsia, faGear, faSignOut, faUser } from '@fortawesome/free-solid-svg-icons';
@@ -148,7 +149,7 @@ function Header() {
             items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}
           >
             {currentUser ? (
-              <img className={cx('user-avatar')} src='https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/a118499fd5d7fcc15f6d9da7c7960107~tplv-tiktokx-cropcenter:168:168.jpeg?dr=14577&refresh_token=15ffce3a&x-expires=1761267600&x-signature=Dj1%2FwYye%2Fg3Bdy4eg5QN85C23EE%3D&t=4d5b0474&ps=13740610&shp=a1d2006b&shcp=a1d2006b&idc=my' alt='Nguyen Van A'></img>
+              <Image className={cx('user-avatar')} src='https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/a118499fd5d7fcc15f6d9da7c7960107~tplv-tiktokx-cropcenter:168:168.jpeg?dr=14577&refresh_token=15ffce3a&x-expires=1761267600&x-signature=Dj1%2FwYye%2Fg3Bdy4eg5QN85C23EE%3D&t=4d5b0474&ps=13740610&shp=a1d2006b&shcp=a1d2006b&idc=my' alt='Nguyen Van A'></Image>
             ) : (
               <button className={cx('more-btn')}>
                 <FontAwesomeIcon icon={faEllipsisVertical} />
