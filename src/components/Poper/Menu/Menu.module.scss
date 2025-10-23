@@ -13,6 +13,11 @@
     padding: 8px 0;
 }
 
+.menu-body {
+    overflow-y: auto;
+
+}
+
 .menu-item {
     display: flex;
     align-items: center;
@@ -46,6 +51,7 @@
     height: 50px;
     padding: 0 16px;
     border-bottom: 1px solid #eee;
+    flex-shrink: 0;
 }
 
 .back-btn {
