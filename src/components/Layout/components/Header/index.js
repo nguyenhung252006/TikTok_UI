@@ -5,13 +5,15 @@ import Button from '~/components/Button';
 import Menu from '~/components/Poper/Menu';
 import Image from '~/components/Image';
 import Search from '../Search';
+import routesConfig from "~/config/routes"
 
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoins, faEarthAsia, faGear, faSignOut, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faKeyboard } from '@fortawesome/free-solid-svg-icons';
 import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
-import { faCircleXmark} from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import { faCloudUpload } from '@fortawesome/free-solid-svg-icons';
 import 'tippy.js/dist/tippy.css';
@@ -71,11 +73,11 @@ function Header() {
       icon: <FontAwesomeIcon icon={faUser} />,
       title: 'View profile',
       to: '/@hoaa',
-    },{
+    }, {
       icon: <FontAwesomeIcon icon={faCoins} />,
       title: 'Get coins',
       to: '/coin',
-    },{
+    }, {
       icon: <FontAwesomeIcon icon={faGear} />,
       title: 'Settings',
       to: '/settings',
@@ -85,18 +87,18 @@ function Header() {
       icon: <FontAwesomeIcon icon={faSignOut} />,
       title: 'Log out',
       to: '/logout',
-      separate : true,
+      separate: true,
     }
   ]
 
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
-        <div className={cx('logo')}>
+        <Link to={routesConfig.home} className={cx('logo-link')}> 
           <img src={images.logo} alt='tiktok-logo'></img>
-        </div>
+        </Link>
         {/* search */}
-        <Search/>
+        <Search />
 
         <div className={cx('action')}>
           {currentUser ? (

@@ -56,6 +56,15 @@ function Search() {
         setShowResult(true)
     }
 
+    const handleChange = (e) => {
+        const searchValue = e.target.value
+        if (!searchValue.startsWith(' ')) {
+            setSearchValue(searchValue);
+        }
+    }
+
+ 
+
     return (
         <HeadlessTipppy
             interactive
@@ -79,7 +88,7 @@ function Search() {
                     ref={inputRef}
                     value={searchValue}
                     spellCheck={false}
-                    onChange={e => setSearchValue(e.target.value)}
+                    onChange={handleChange}
                     onFocus={handleUnHideResult}
                 ></input>
                 {!!searchValue && !loading && (
@@ -89,7 +98,7 @@ function Search() {
                 )}
                 {/* Loading */}
                 {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={e => e.preventDefault()}>
                     {/* Icon Search */}
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
