@@ -1,6 +1,7 @@
 import className from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import styles from './Button.module.scss';
+import PropTypes from 'prop-types';
 
 const cx = className.bind(styles)
 function Button({ to,
@@ -57,6 +58,9 @@ function Button({ to,
             <span className={cx('title')}>{children}</span>
         </Comp>
     );
+}
+Button.prototype = {
+    children : PropTypes.node.isRequired,
 }
 
 export default Button;

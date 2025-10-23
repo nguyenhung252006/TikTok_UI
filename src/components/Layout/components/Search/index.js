@@ -1,3 +1,4 @@
+import propType from 'prop-type';
 import AccountItems from '~/components/AccountItems';
 import { useState, useRef, useEffect } from 'react';
 import { faSpinner, faMagnifyingGlass, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
