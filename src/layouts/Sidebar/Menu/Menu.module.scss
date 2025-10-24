@@ -1,0 +1,22 @@
+.menu-item {
+    display: flex;
+    padding: 8px 0 8px 0;
+    border-radius: 6px;
+    transition: background-color ease-in-out 200ms;
+
+    &:hover {
+        background-color: rgba(27, 30, 44, 0.03);
+    }
+    &.active {
+        color: red;
+    }
+}
+
+.menu-icon {
+    width: 3.4rem;
+    height: 3.4rem;
+}
+
+.title {
+    margin-left: 10px;
+}
