@@ -11,7 +11,7 @@ import { useState } from 'react';
 const cx = classNames.bind(styles);
 const defaultFn = () => { }
 
-function Menu({ children, items = [],hideOnClick = false, onChange = defaultFn,}) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn, }) {
 
 
     const [history, setHistory] = useState([{ data: items }]);
@@ -31,6 +31,9 @@ function Menu({ children, items = [],hideOnClick = false, onChange = defaultFn,}
             />;
         });
     }
+
+    const handleResetToFirstPage = prev => prev.slice(0, 1);
+    const handleBack = () => { setHistory(prev => prev.slice(0, prev.length - 1)) }
     return (
         <Tippy
             hideOnClick={hideOnClick}
@@ -41,14 +44,12 @@ function Menu({ children, items = [],hideOnClick = false, onChange = defaultFn,}
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PoperWrapper className={cx('menu-poper')}>
                         {history.length > 1 && <Header title="Language"
-                            onBack={() => {
-                                setHistory(prev => prev.slice(0, prev.length - 1))
-                            }} />}
+                            onBack={handleBack} />}
                         <div className={cx('menu-body')}>{renderItems()}</div>
                     </PoperWrapper>
                 </div>
             )}
-            onHide={() => setHistory(prev => prev.slice(0, 1))}
+            onHide={() => setHistory(handleResetToFirstPage)}
         >
             {children}
         </Tippy >
